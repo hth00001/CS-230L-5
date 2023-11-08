@@ -1,13 +1,23 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Card from './/Components/Card/Card.js';
+import NavBar from './/Components/NavBar/NavBar.js';
+import Home from './/Components/Home/Home.js';
+import Contact from './/Components/Contact/Contact.js';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 
 function App() {
   return (
     <div className="App">
-          <h1>CS 230L</h1>
-          <h2>Section - 002</h2>
-          <p>WVU ID: 800360262</p>
-          <p>Hi I am Hunter Harris</p>
+        <BrowserRouter>
+          <NavBar />
+          <Routes>
+            <Route path='/' element={<Home />}></Route>
+            <Route path='/Card' element={<Card />}></Route>
+            <Route path='/Contact' element={<Contact />}></Route>
+          </Routes>
+        </BrowserRouter>
     </div>
   );
 }
